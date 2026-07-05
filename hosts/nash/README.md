@@ -30,8 +30,14 @@ and the `c` command lets you set the `partition label`.
 ## Installation
 After everything has been mounted and made available
 you must unmount /mnt/data if using btrfs. Then
-generate the `hardware-configuration.nix` via.
+generate the `hardware-configuration.nix` via
 ```sh
-nixos-generate-config --root /mnt --no-filesystems --show-hardware-config
+nixos-generate-config --root /mnt\
+    --no-filesystems\
+    --show-hardware-config
+```
+Finish the install!
+```sh
+nixos-install --root /mnt --flake github:0x1e02/Nash#nash
 ```
 
