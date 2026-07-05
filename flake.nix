@@ -15,9 +15,9 @@
       system = "x86_64-linux";
       modules = [
         disko.nixosModules.disko
-        ./hosts/nas/configuration.nix
+        ./hosts/nash/configuration.nix
         # ./hosts/nas/hardware-configuration.nix
-        ./hosts/nas/disko.nix
+        ./hosts/nash/disko.nix
       ];
     };
   };

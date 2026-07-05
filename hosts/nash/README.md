@@ -24,3 +24,8 @@ dd if=/dev/urandom bs=512 count=8
 If `gdisk` should be used for partitioning,
 then `+4k` for the partitions end is exact
 and the `c` command lets you set the `partition label`.
+
+## Installation
+Get disko via `nix shell github:nix-community/disko`
+and verify it worked with
+`disko --help`.
