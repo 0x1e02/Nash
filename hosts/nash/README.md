@@ -1,17 +1,19 @@
 # Setup Documentation for `nash` -- a Home NAS and Lab System
+Get disko via `nix shell github:nix-community/disko`
+and verify it worked with
+`disko --help`.
 
-## Disk Encryption
+
 The disk setup is described in `disko.nix`. Evaluate
 ```sh
-sudo nix run github:nix-community/disko \
-    --extra-experimental-features "nix-command flakes"  -- \
-    --mode format ./disko.nix
+disko --mode format --flake github:0x1e02/Nash#nash
 ```
 to create the new partitioning scheme and the described filesystem.
 If the devices are not clean `--mode destroy` needs to preceed.
 Other modes are `mount` / `unmount`. Also the sequences
 `format,mount` and `destroy,format,mount` are recognized.
 
+## Disk Encryption
 For encrypting
 `/dev/nvme0n1p3` a separate partition,
 serving as a keyfile, must be created.
@@ -26,6 +28,10 @@ then `+4k` for the partitions end is exact
 and the `c` command lets you set the `partition label`.
 
 ## Installation
-Get disko via `nix shell github:nix-community/disko`
-and verify it worked with
-`disko --help`.
+After everything has been mounted and made available
+you must unmount /mnt/data if using btrfs. Then
+generate the `hardware-configuration.nix` via.
+```sh
+nixos-generate-config --root /mnt --no-filesystems --show-hardware-config
+```
+
