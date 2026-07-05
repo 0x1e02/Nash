@@ -11,7 +11,7 @@
   };
 
   outputs = { self, nixpkgs, disko, ... }: {
-    nixosConfigurations.nas = nixpkgs.lib.nixosSystem {
+    nixosConfigurations.nash = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
         disko.nixosModules.disko
