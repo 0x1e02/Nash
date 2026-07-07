@@ -61,7 +61,7 @@
   ];
 
   environment.persistence."/persist" = {
-    # hideMounts = true;
+    hideMounts = true;
 
     directories = [
       "/etc/nixos"
