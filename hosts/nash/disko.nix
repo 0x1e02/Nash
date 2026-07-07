@@ -83,7 +83,7 @@
       lvs = {
         thinpool = {
           size = "98%";
-          lvm_type = "thin-pool"
+          lvm_type = "thin-pool";
         };
       };
     };
