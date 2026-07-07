@@ -7,11 +7,12 @@
     disko.url = "github:nix-community/disko";
   };
 
-  outputs = { self, nixpkgs, disko, ... }: {
+  outputs = { self, nixpkgs, disko, impermanence, ... }: {
     nixosConfigurations.nash = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
         disko.nixosModules.disko
+        impermanence.nixosModules.impermanence
         ./hosts/nash/configuration.nix
         ./hosts/nash/hardware-configuration.nix
         ./hosts/nash/disko.nix

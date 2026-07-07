@@ -60,5 +60,19 @@
     cryptsetup
   ];
 
+  environment.persistence."/persist" = {
+    # hideMounts = true;
+
+    directories = [
+      "/etc/nixos"
+      "/var/log"
+      "/var/lib"
+    ];
+
+    files = [
+      "/etc/machine-id"
+    ];
+  };
+
   system.stateVersion = "26.05"; # keep this pinned to the release you installed with
 }
