@@ -1,6 +1,15 @@
 { ... }:
 {
   disko.devices = {
+    nodev."/" = {
+      fsType = "tmpfs";
+      mountOptions = [
+        "size=2G"
+        "defaults"
+        "mode=755"
+      ];
+    };
+
     disk.nvme = {
       type = "disk";
       device = "/dev/nvme0n1";
@@ -24,9 +33,28 @@
             name = "root";
             size = "32G";
             content = {
-              type = "filesystem";
-              format = "ext4";
-              mountpoint = "/";
+              type = "btrfs";
+              extraArgs = [ "-f" ];
+
+              subvolumes = {
+                "/nix" = {
+                  mountpoint = "/nix";
+                  mountOptions = [
+                    "compress=zstd"
+                    "noatime"
+                  ];
+                };
+
+                "/persist" = {
+                  mountpoint = "/persist";
+                  mountOptions = [
+                    "compress=zstd"
+                    "noatime"
+                  ];
+                };
+
+                "/snapshots" = { };
+              };
             };
           };
 
@@ -41,12 +69,6 @@
               settings = {
                 allowDiscards = true;
                 keyFile = "/dev/disk/by-partlabel/KEY";
-              };
-
-              content = {
-                type = "filesystem";
-                format = "btrfs";
-                mountpoint = "/data";
               };
             };
           };

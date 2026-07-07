@@ -3,11 +3,8 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-26.05";
-
-    disko = {
-      url = "github:nix-community/disko";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    impermanence.url = "github:nix-community/impermanence";
+    disko.url = "github:nix-community/disko";
   };
 
   outputs = { self, nixpkgs, disko, ... }: {
@@ -16,7 +13,7 @@
       modules = [
         disko.nixosModules.disko
         ./hosts/nash/configuration.nix
-        ./hosts/nas/hardware-configuration.nix
+        ./hosts/nash/hardware-configuration.nix
         ./hosts/nash/disko.nix
       ];
     };
