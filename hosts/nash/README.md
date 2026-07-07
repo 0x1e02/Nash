@@ -1,5 +1,8 @@
 # Setup Documentation for `nash` -- a Home NAS and Lab System
-Get disko via `nix shell github:nix-community/disko`
+Get disko via
+```sh
+nix shell github:nix-community/disko
+```
 and verify it worked with
 `disko --help`.
 
@@ -41,3 +44,6 @@ Finish the install!
 nixos-install --root /mnt --flake github:0x1e02/Nash#nash
 ```
 
+```sh
+sudo nixos-rebuild switch --flake github:MRN-storage/Noether/bcache#nas
+```
