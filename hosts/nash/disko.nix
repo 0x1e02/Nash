@@ -70,8 +70,20 @@
                 allowDiscards = true;
                 keyFile = "/dev/disk/by-partlabel/KEY";
               };
+
+              content = { type = "lvm_pv"; vg="vg0"; }
             };
           };
+        };
+      };
+    };
+
+    lvm_vg.vg0 = {
+      type = "lvm_vg";
+      lvs = {
+        thinpool = {
+          size = "98%";
+          lvm_type = "thin-pool"
         };
       };
     };

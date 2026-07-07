@@ -58,6 +58,7 @@
     tree
     mdadm
     cryptsetup
+    efibootmgr
   ];
 
   environment.persistence."/persist" = {
