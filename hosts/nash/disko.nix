@@ -106,6 +106,17 @@
             mountpoint = "/mnt/nfs/ruth";
           };
         };
+        
+        chris_lv = {
+          size = "200G";
+          lvm_type = "thinlv";
+          pool = "thinpool";
+          content = {
+            type = "filesystem";
+            format = "btrfs";
+            mountpoint = "/mnt/nfs/chris";
+          };
+        };
       };
     };
   };
