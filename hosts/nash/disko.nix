@@ -88,7 +88,7 @@
         ell_lv = {
           size = "200G";
           lvm_type = "thinlv";
-          pool = "thin-pool";
+          pool = "thinpool";
           content = {
             type = "filesystem";
             format = "btrfs";
@@ -99,7 +99,7 @@
         ruth_lv = {
           size = "200G";
           lvm_type = "thinlv";
-          pool = "thin-pool";
+          pool = "thinpool";
           content = {
             type = "filesystem";
             format = "btrfs";
