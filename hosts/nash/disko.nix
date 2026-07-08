@@ -85,16 +85,16 @@
           size = "98%";
           lvm_type = "thin-pool";
         };
-        # ell_lv = {
-        #   size = "200G";
-        #   lvm_type = "thinlv";
-        #   pool = "thinpool";
-        #   content = {
-        #     type = "filesystem";
-        #     format = "btrfs";
-        #     mountpoint = "/mnt/nfs/ell";
-        #   };
-        # };
+        ell_lv = {
+          size = "200G";
+          lvm_type = "thinlv";
+          pool = "thinpool";
+          content = {
+            type = "filesystem";
+            format = "btrfs";
+            mountpoint = "/mnt/nfs/ell";
+          };
+        };
 
         # ruth_lv = {
         #   size = "200G";
