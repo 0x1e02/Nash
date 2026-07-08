@@ -92,7 +92,7 @@
           content = {
             type = "filesystem";
             format = "btrfs";
-            mountpoint = "/mnt/nfs/ell";
+            mountpoint = "/srv/nfs/ell";
             mountOptions = [
               "defaults"
               "nofail"
@@ -101,27 +101,27 @@
           };
         };
 
-        # ruth_lv = {
-        #   size = "200G";
-        #   lvm_type = "thinlv";
-        #   pool = "thinpool";
-        #   content = {
-        #     type = "filesystem";
-        #     format = "btrfs";
-        #     mountpoint = "/mnt/nfs/ruth";
-        #   };
-        # };
+        ruth_lv = {
+          size = "200G";
+          lvm_type = "thinlv";
+          pool = "thinpool";
+          content = {
+            type = "filesystem";
+            format = "btrfs";
+            mountpoint = "/srv/nfs/ruth";
+          };
+        };
         
-        # chris_lv = {
-        #   size = "200G";
-        #   lvm_type = "thinlv";
-        #   pool = "thinpool";
-        #   content = {
-        #     type = "filesystem";
-        #     format = "btrfs";
-        #     mountpoint = "/mnt/nfs/chris";
-        #   };
-        # };
+        chris_lv = {
+          size = "200G";
+          lvm_type = "thinlv";
+          pool = "thinpool";
+          content = {
+            type = "filesystem";
+            format = "btrfs";
+            mountpoint = "/srv/nfs/chris";
+          };
+        };
       };
     };
   };
