@@ -10,19 +10,7 @@
 
   time.timeZone = "Europe/Berlin"; # adjust to your timezone
 
-  boot.initrd.availableKernelModules = [
-    "nvme" "ahci" "sd_mod"       # storage controllers
-    "md_mod" "raid1"             # RAID1 / md assembly
-    "bcache"                     # bcache backing + cache registration
-    "dm_crypt" "dm_mod"          # LUKS / device-mapper
-    "dm_thin_pool"               # LVM thin provisioning
-    "usb_storage"
-    "uas"      # if the device uses USB Attached SCSI
-    "xhci_pci" # USB 3 controllers
-    "ehci_pci" # USB 2 controllers if needed
-  ];
-
-  # boot.initrd.services.lvm.enable = true;
+  boot.initrd.services.lvm.enable = true;
 
   networking.firewall.allowedTCPPorts = [ 80 443 22 ];
   networking.networkmanager.enable = true;
