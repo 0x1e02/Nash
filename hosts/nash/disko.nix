@@ -1,4 +1,4 @@
-{ pkgs }:
+{ pkgs, ... }:
 {
   disko.devices = {
     nodev."/" = {
