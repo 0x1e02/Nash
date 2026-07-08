@@ -80,7 +80,7 @@
                   "/ruth" = {
                     mountpoint = "/srv/nfs/ruth";
                   };
-                }
+                };
               };
             };
           };
