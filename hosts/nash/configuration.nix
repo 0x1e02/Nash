@@ -10,9 +10,9 @@
 
   time.timeZone = "Europe/Berlin"; # adjust to your timezone
   
-  # boot.initrd.systemd.extraBin = {
-  #   thin_check = "${pkgs.thin-provisioning-tools}/bin/thin_check";
-  # };
+  boot.initrd.systemd.extraBin = {
+    thin_check = "${pkgs.thin-provisioning-tools}/bin/thin_check";
+  };
 
   services.lvm.boot.thin.enable = true;
 
