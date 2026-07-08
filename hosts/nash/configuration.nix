@@ -10,13 +10,11 @@
 
   time.timeZone = "Europe/Berlin"; # adjust to your timezone
   
-  boot.initrd.systemd.extraBin = {
-    thin_check = "${pkgs.thin-provisioning-tools}/bin/thin_check";
-  };
+  # boot.initrd.systemd.extraBin = {
+  #   thin_check = "${pkgs.thin-provisioning-tools}/bin/thin_check";
+  # };
 
-  boot.initrd.services.lvm.enable = true;
-  services.lvm.enable = true;
-  services.lvm.dmeventd.enable = true;
+  services.lvm.boot.thin.enable = true;
 
   networking.firewall.allowedTCPPorts = [ 80 443 22 ];
   networking.networkmanager.enable = true;
