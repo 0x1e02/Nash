@@ -10,7 +10,7 @@
     };
 
     services.stunnel = {
-        enabled = true;
+        enable = true;
         servers = {
             nfs = {
                 accept = "0.0.0.0:2222";
