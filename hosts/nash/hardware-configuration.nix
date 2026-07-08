@@ -9,7 +9,7 @@
     ];
 
   boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "ahci" "usbhid" "usb_storage" "sd_mod" ];
-  boot.initrd.kernelModules = [ "dm-thin-pool" ];
+  boot.initrd.kernelModules = [ "dm_thin_pool" ];
   boot.kernelModules = [ ];
   boot.extraModulePackages = [ ];
 
