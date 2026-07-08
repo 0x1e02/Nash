@@ -109,6 +109,11 @@
             type = "filesystem";
             format = "btrfs";
             mountpoint = "/srv/nfs/ruth";
+            mountOptions = [
+              "defaults"
+              "nofail"
+              "x-systemd.device-timeout=10"
+            ];
           };
         };
         
@@ -120,6 +125,11 @@
             type = "filesystem";
             format = "btrfs";
             mountpoint = "/srv/nfs/chris";
+            mountOptions = [
+              "defaults"
+              "nofail"
+              "x-systemd.device-timeout=10"
+            ];
           };
         };
       };
