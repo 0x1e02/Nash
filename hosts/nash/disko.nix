@@ -34,7 +34,7 @@
             size = "32G";
             content = {
               type = "btrfs";
-              extraArgs = [ "-f" ];
+              # extraArgs = [ "-f" ];
 
               subvolumes = {
                 "/nix" = {
@@ -71,82 +71,22 @@
                 keyFile = "/dev/disk/by-partlabel/KEY";
               };
 
-              content = { type = "lvm_pv"; vg="vg0"; };
+              content = {
+                type = "btrfs";
+                subvolumes = {
+                  "/ell" = {
+                    mountpoint = "/srv/nfs/ell";
+                  };
+                  "/ruth" = {
+                    mountpoint = "/srv/nfs/ruth";
+                  };
+                }
+              };
             };
           };
         };
       };
     };
-
-    lvm_vg.vg0 = {
-      type = "lvm_vg";
-      lvs = {
-        thinpool = {
-          size = "98%";
-          lvm_type = "thin-pool";
-        };
-        ell_lv = {
-          size = "200G";
-          lvm_type = "thinlv";
-          pool = "thinpool";
-          content = {
-            type = "filesystem";
-            format = "btrfs";
-            mountpoint = "/srv/nfs/ell";
-            mountOptions = [
-              "defaults"
-              "nofail"
-              "x-systemd.device-timeout=10"
-            ];
-          };
-        };
-
-        ruth_lv = {
-          size = "200G";
-          lvm_type = "thinlv";
-          pool = "thinpool";
-          content = {
-            type = "filesystem";
-            format = "btrfs";
-            mountpoint = "/srv/nfs/ruth";
-            mountOptions = [
-              "defaults"
-              "nofail"
-              "x-systemd.device-timeout=10"
-            ];
-          };
-        };
-        
-        chris_lv = {
-          size = "200G";
-          lvm_type = "thinlv";
-          pool = "thinpool";
-          content = {
-            type = "filesystem";
-            format = "btrfs";
-            mountpoint = "/srv/nfs/chris";
-            mountOptions = [
-              "defaults"
-              "nofail"
-              "x-systemd.device-timeout=10"
-            ];
-          };
-        };
-      };
-    };
   };
-
-  systemd.services.activate-vg0 = {
-    description = "Activate vg0 (thin pool)";
-    after = [ "systemd-udev-settle.service" ];
-    before = [ "local-fs-pre.target" ];
-    wantedBy = [ "local-fs-pre.target" ];
-    serviceConfig = {
-      Type = "oneshot";
-      RemainAfterExit = true;
-      ExecStart = "${pkgs.lvm2}/bin/vgchange -aay vg0";
-    };
-  };
-
   fileSystems."/persist".neededForBoot = true;
 }

@@ -9,12 +9,6 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   time.timeZone = "Europe/Berlin"; # adjust to your timezone
-  
-  boot.initrd.systemd.extraBin = {
-    thin_check = "${pkgs.thin-provisioning-tools}/bin/thin_check";
-  };
-
-  # services.lvm.boot.thin.enable = true;
 
   networking.firewall.allowedTCPPorts = [ 80 443 22 ];
   networking.networkmanager.enable = true;
@@ -51,7 +45,6 @@
     mdadm
     cryptsetup
     efibootmgr
-    thin-provisioning-tools
     disko
   ];
 
