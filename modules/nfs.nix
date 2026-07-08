@@ -9,7 +9,20 @@
         '';
     };
 
+    services.stunnel = {
+        enabled = true;
+        servers = {
+            nfs = {
+                accept = "0.0.0.0:2222";
+                connect = "127.0.0.1:2049";
+                cert = "/etc/stunnel/stunnel.crt";
+                key  = "/etc/stunnel/stunnel.key";
+                verifyPeer = true;
+            };
+        };
+    };
+
     networking.firewall = {
-        allowedTCPPorts = [ 2049 ];
+        allowedTCPPorts = [ 2049 2222 ];
     };
 }
