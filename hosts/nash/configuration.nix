@@ -12,6 +12,9 @@
 
   boot.initrd.services.lvm.enable = true;
 
+  services.lvm.enable = true;
+  services.lvm.boot.thin.enable = true;
+
   networking.firewall.allowedTCPPorts = [ 80 443 22 ];
   networking.networkmanager.enable = true;
 
