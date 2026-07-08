@@ -18,6 +18,7 @@
                 cert = "/etc/stunnel/stunnel.crt";
                 key  = "/etc/stunnel/stunnel.key";
                 verifyPeer = true;
+                CAfile = "/etc/stunnel/stunnel.crt";
             };
         };
     };
