@@ -49,6 +49,7 @@
     cryptsetup
     efibootmgr
     thin-provisioning-tools
+    disko
   ];
 
   environment.persistence."/persist" = {
