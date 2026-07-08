@@ -93,6 +93,11 @@
             type = "filesystem";
             format = "btrfs";
             mountpoint = "/mnt/nfs/ell";
+            mountOptions = [
+              "defaults"
+              "nofail"
+              "x-systemd.device-timeout=10"
+            ];
           };
         };
 

@@ -50,6 +50,7 @@
     mdadm
     cryptsetup
     efibootmgr
+    thin-provisioning-tools
   ];
 
   environment.persistence."/persist" = {
