@@ -136,5 +136,17 @@
     };
   };
 
+  systemd.services.activate-vg0 = {
+    description = "Activate vg0 (thin pool)";
+    after = [ "systemd-udev-settle.service" ];
+    before = [ "local-fs-pre.target" ];
+    wantedBy = [ "local-fs-pre.target" ];
+    serviceConfig = {
+      Type = "oneshot";
+      RemainAfterExit = true;
+      ExecStart = "${pkgs.lvm2}/bin/vgchange -aay vg0";
+    };
+  };
+
   fileSystems."/persist".neededForBoot = true;
 }

@@ -14,7 +14,7 @@
     thin_check = "${pkgs.thin-provisioning-tools}/bin/thin_check";
   };
 
-  services.lvm.boot.thin.enable = true;
+  # services.lvm.boot.thin.enable = true;
 
   networking.firewall.allowedTCPPorts = [ 80 443 22 ];
   networking.networkmanager.enable = true;
