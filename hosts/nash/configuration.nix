@@ -25,7 +25,7 @@
     openssh.authorizedKeys.keys = [
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIATg9YlVf77jeJoxbBuQhoFv6/GugmVqM/HlVE5RxyHj ell@lovelace"
     ];
-  }
+  };
 
   services.openssh = {
     enable = true;
