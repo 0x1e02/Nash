@@ -20,6 +20,12 @@
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICFLSh8+F3ZA0H6F8IBClfrMfDJIyYvt7Ytj3CeanonX ell@dirac"
     ];
   };
+  users.users.ell = {
+    isNormalUser = true;
+    openssh.authorizedKeys.keys = [
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIATg9YlVf77jeJoxbBuQhoFv6/GugmVqM/HlVE5RxyHj ell@lovelace"
+    ];
+  }
 
   services.openssh = {
     enable = true;

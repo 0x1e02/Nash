@@ -75,10 +75,10 @@
                 type = "btrfs";
                 subvolumes = {
                   "/ell" = {
-                    mountpoint = "/srv/nfs/ell";
+                    mountpoint = "/home/ell";
                   };
                   "/ruth" = {
-                    mountpoint = "/srv/nfs/ruth";
+                    mountpoint = "/srv/share/ruth";
                   };
                 };
               };

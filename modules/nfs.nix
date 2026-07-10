@@ -3,10 +3,9 @@
     services.nfs.server = {
         enable = true;
         exports = ''
-        /srv/nfs                    *(rw,fsid=0,no_subtree_check)
-        /srv/nfs/ruth               192.168.0.0/24(rw,sync,nohide,insecure,no_subtree_check,all_squash)
-        /srv/nfs/ell                192.168.0.0/24(rw,sync,nohide,insecure,no_subtree_check,all_squash)
-        /srv/nfs/ell                127.0.0.0/8(rw,sync,nohide,insecure,no_subtree_check,all_squash)
+        /srv/share                    *(rw,insecure,fsid=0,no_subtree_check)
+        /srv/share/ruth               192.168.0.0/24(rw,sync,nohide,insecure,no_subtree_check,all_squash)
+        /srv/share/ell                *(rw,sync,nohide,insecure,no_subtree_check,all_squash)
         '';
     };
 
