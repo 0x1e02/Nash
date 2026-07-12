@@ -1,7 +1,6 @@
 { ... }:
 {
   services.btrbk = {
-    enable = true;
     instances."home" = {
       onCalendar = "hourly";
       settings = {
