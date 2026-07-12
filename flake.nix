@@ -16,6 +16,7 @@
         ./hosts/nash/configuration.nix
         ./hosts/nash/hardware-configuration.nix
         ./hosts/nash/disko.nix
+        ./hosts/nash/btrbk.nix
         ./modules/nfs.nix
       ];
     };
