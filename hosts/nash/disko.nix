@@ -76,9 +76,11 @@
                 subvolumes = {
                   "/ell" = {
                     mountpoint = "/home/ell";
+                    subvolumes = { ".snapshots" = {}; };
                   };
                   "/ruth" = {
                     mountpoint = "/home/ruth";
+                    subvolumes = { ".snapshots" = {}; };
                   };
                 };
               };
