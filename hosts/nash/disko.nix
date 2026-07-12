@@ -78,7 +78,7 @@
                     mountpoint = "/home/ell";
                   };
                   "/ruth" = {
-                    mountpoint = "/srv/share/ruth";
+                    mountpoint = "/home/ruth";
                   };
                 };
               };
