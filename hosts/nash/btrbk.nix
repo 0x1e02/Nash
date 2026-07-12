@@ -10,12 +10,12 @@
 
         volume."/home/ell" = {
           subvolume = ".";
-          snapshot_dir = "/snapshots-data/ell";
+          snapshot_dir = ".snapshots";
         };
 
         volume."/home/ruth" = {
           subvolume = ".";
-          snapshot_dir = "/snapshots-data/ruth";
+          snapshot_dir = ".snapshots";
         };
       };
     };
