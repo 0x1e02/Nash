@@ -81,7 +81,7 @@
                   "/ruth" = {
                     mountpoint = "/home/ruth";
                   };
-                  "/ell/.snapshots" = {};
+                  "/ruth/.snapshots" = {};
                 };
               };
             };
