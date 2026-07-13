@@ -16,6 +16,6 @@
     isNormalUser = true;
     openssh.authorizedKeys.keys = [
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGxPiP8cxh5A/w/oQRX7+NseEk93l268IvP2iI0cLVPj nicola@donegal"
-    ]
+    ];
   };
 }
