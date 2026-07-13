@@ -1,41 +1,14 @@
 { config, lib, pkgs, ... }:
 let
   # find every declared user with "storage" in their extraGroups
-  storageUsers = lib.attrNames (
-    lib.filterAttrs (
-      _name: user: lib.elem "storage" (user.extraGroups or [])
-    ) config.users.users
-  );
 
-  userSubvolumes = lib.listToAttrs (
-    lib.concatMap (name: [
-      {
-        name = "/${name}";
-        value = {
-          mountpoint = "/data/${name}";
-          mountOptions = [
-            "compress=zstd"
-            "noatime"
-          ];
-        };
-      }
-      {
-        name = "/${name}/.snapshots";
-        value = { };
-      }
-    ]) storageUsers
-  );
+  storageUsers = lib.filterAttrs  
+    (_: u: builtins.elem "storage" (u.extraGroups or []))  
+    config.users.users;  
 
-  nodevBackupMounts = lib.listToAttrs (
-    map (name: {
-      name = "/home/${name}/Backups";
-      value = {
-        fsType = "none";
-        device = "/data/${name}/Backups";
-        mountOptions = [ "bind" ];
-      };
-    }) storageUsers
-  );
+  userSubvolumes = {};
+
+  nodevBackupMounts = {};
 
 in
 {
