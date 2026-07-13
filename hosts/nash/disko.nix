@@ -1,11 +1,9 @@
 { config, lib, pkgs, ... }:
 let
   # find every declared user with "storage" in their extraGroups
-  storageUsers = lib.attrNames (
-    lib.filterAttrs (
-      _name: user: lib.elem "storage" (user.extraGroups or [])
-    ) config.users.users
-  );
+  storageUsers = lib.filterAttrs  
+    (_: u: builtins.elem "storage" (u.extraGroups or []))  
+    config.users.users;  
 
   userSubvolumes = lib.listToAttrs (
     lib.concatMap (name: [
