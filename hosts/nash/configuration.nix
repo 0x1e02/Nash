@@ -1,4 +1,7 @@
 { config, pkgs, ... }:
+let
+  storageUserData = import ./storage-users.nix;  
+in
 {
   networking.hostName = "nash";
 
@@ -15,13 +18,20 @@
   
   services.tailscale.enable = true;
 
-  users.users.admin = {
+  users.groups."storage" = {};
+  users.users = {
+    admin = {
+      isNormalUser = true;
+      extraGroups = [ "wheel" ];
+      openssh.authorizedKeys.keys = [
+        "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICFLSh8+F3ZA0H6F8IBClfrMfDJIyYvt7Ytj3CeanonX ell@dirac"
+      ];
+    };
+  } // lib.mapAttrs (name: data: {
     isNormalUser = true;
-    extraGroups = [ "wheel" ];
-    openssh.authorizedKeys.keys = [
-      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICFLSh8+F3ZA0H6F8IBClfrMfDJIyYvt7Ytj3CeanonX ell@dirac"
-    ];
-  };
+    openssh.authorizedKeys.keys = data.authorizedKeys;
+    extraGroups = [ "storage" ];
+  }) storageUsersData;
 
   services.openssh = {
     enable = true;
