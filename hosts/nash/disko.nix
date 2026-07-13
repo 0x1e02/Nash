@@ -43,8 +43,8 @@ in
         "defaults"
         "mode=755"
       ];
-    } // nodevBackupMounts;
-  };
+    };
+  } // nodevBackupMounts;
 
   disko.devices.disk = {
     nvme = {
