@@ -16,6 +16,11 @@
           subvolume = ".";
           snapshot_dir = ".snapshots";
         };
+
+        volume."/data/nicola" = {
+          subvolume = ".";
+          snapshot_dir = ".snapshots";
+        };
       };
     };
   };
