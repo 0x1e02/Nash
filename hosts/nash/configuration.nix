@@ -12,6 +12,8 @@
 
   networking.firewall.allowedTCPPorts = [ 80 443 22 ];
   networking.networkmanager.enable = true;
+  
+  services.tailscale.enable = true;
 
   users.users.admin = {
     isNormalUser = true;
