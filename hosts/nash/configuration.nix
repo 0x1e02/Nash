@@ -31,7 +31,7 @@ in
     isNormalUser = true;
     openssh.authorizedKeys.keys = data.authorizedKeys;
     extraGroups = [ "storage" ];
-  }) storageUsersData;
+  }) storageUserData;
 
   services.openssh = {
     enable = true;
