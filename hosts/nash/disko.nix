@@ -118,8 +118,10 @@ in
       };
     };
   };
+
   fileSystems."/persist".neededForBoot = true;
+
   systemd.tmpfiles.rules = map (
-    name: "d /data/${name}/Backups 0750 ${name} users -"
+    name: "d /data/${name}/Backups 0700 ${name} users -"
   ) storageUsers;
 }
