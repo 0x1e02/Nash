@@ -1,16 +1,57 @@
-{ pkgs, ... }:
+{ config, lib, pkgs, ... }:
+let
+  # find every declared user with "storage" in their extraGroups
+  storageUsers = lib.attrNames (
+    lib.filterAttrs (
+      _name: user: lib.elem "storage" (user.extraGroups or [])
+    ) config.users.users
+  );
+
+  userSubvolumes = lib.listToAttrs (
+    lib.concatMap (name: [
+      {
+        name = "/${name}";
+        value = {
+          mountpoint = "/data/${name}";
+          mountOptions = [
+            "compress=zstd"
+            "noatime"
+          ];
+        };
+      }
+      {
+        name = "/${name}/.snapshots";
+        value = { };
+      }
+    ]) storageUsers
+  );
+
+  nodevBackupMounts = lib.listToAttrs (
+    map (name: {
+      name = "/home/${name}/Backups";
+      value = {
+        fsType = "none";
+        device = "/data/${name}/Backups";
+        mountOptions = [ "bind" ];
+      };
+    }) storageUsers
+  );
+
+in
 {
-  disko.devices = {
-    nodev."/" = {
+  disko.devices.nodev = {
+    "/" = {
       fsType = "tmpfs";
       mountOptions = [
         "size=2G"
         "defaults"
         "mode=755"
       ];
-    };
+    } // nodevBackupMounts;
+  };
 
-    disk.nvme = {
+  disko.devices.disk = {
+    nvme = {
       type = "disk";
       device = "/dev/nvme0n1";
       content = {
@@ -73,16 +114,7 @@
 
               content = {
                 type = "btrfs";
-                subvolumes = {
-                  "/ell" = {
-                    mountpoint = "/home/ell";
-                  };
-                  "/ell/.snapshots" = {};
-                  "/ruth" = {
-                    mountpoint = "/home/ruth";
-                  };
-                  "/ruth/.snapshots" = {};
-                };
+                subvolumes = userSubvolumes;
               };
             };
           };
