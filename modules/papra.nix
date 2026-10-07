@@ -3,7 +3,7 @@
   services.papra = {
     enable = true;
     user = "ell";
-    group = "users"
+    group = "users";
     # baseUrl = "http://nash:1221";   # must match the URL you type in the browser
     # listenAddress = "0.0.0.0";          # default is 127.0.0.1
     # persistRoot = "/persist";           # only if you use impermanence, see below
