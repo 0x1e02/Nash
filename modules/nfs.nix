@@ -38,4 +38,9 @@
         options = [ "bind" ];
     };
 
+    fileSystems."/srv/share/ell/Backups" = {
+        device = "/data/ell/Backups";
+        fsType = "none";
+        options = [ "bind" ];
+    };
 }
