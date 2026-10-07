@@ -9,8 +9,8 @@
     environment = {
       APP_BASE_URL = "http://nash:1221";
       DOCUMENTS_OCR_LANGUAGES = "eng,deu";
-      DOCUMENT_STORAGE_FILESYSTEM_ROOT= "/data/ell/Papra/documents";
-      DATABASE_URL = "file:/data/ell/Papra/db.sqlite";
+      # DOCUMENT_STORAGE_FILESYSTEM_ROOT= "/data/ell/Papra/documents";
+      # DATABASE_URL = "file:/data/ell/Papra/db.sqlite";
     };
   };
 }
