@@ -12,8 +12,9 @@
       APP_BASE_URL = "http://nash:1221";
       DOCUMENTS_OCR_LANGUAGES = "eng,deu";
       DOCUMENT_STORAGE_FILESYSTEM_ROOT= "/data/ell/Papra/documents";
-      INGESTION_FOLDER_ROOT_PATH = "/data/ell/Papra/ingestion";
       DATABASE_URL = "file:/data/ell/Papra/db.sqlite";
+      INGESTION_FOLDER_IS_ENABLED = true;
+      INGESTION_FOLDER_ROOT_PATH = "/data/ell/Papra/ingestion";
     };
   };
 
