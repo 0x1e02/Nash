@@ -60,6 +60,7 @@ in
       "/etc/nixos"
       "/var/log"
       "/var/lib"
+      "/srv"
     ];
 
     files = [

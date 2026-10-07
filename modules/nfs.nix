@@ -26,4 +26,15 @@
     networking.firewall = {
         allowedTCPPorts = [ 2049 111 ];
     };
+
+    systemd.tmpfiles.rules = [
+        "d /srv/share 0755 root root -"
+        "d /srv/share/ell 0755 root root -"
+    ];
+
+    fileSystems."/srv/share/Papra-ingestion" = {
+        device = "/data/ell/Papra/ingestion";
+        options = [ "bind" ];
+    };
+
 }
