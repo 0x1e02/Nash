@@ -34,6 +34,7 @@
 
     fileSystems."/srv/share/Papra-ingestion" = {
         device = "/data/ell/Papra/ingestion";
+        fsType = "none";
         options = [ "bind" ];
     };
 
