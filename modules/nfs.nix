@@ -32,7 +32,7 @@
         "d /srv/share/ell 0755 root root -"
     ];
 
-    fileSystems."/srv/share/Papra-ingestion" = {
+    fileSystems."/srv/share/ell/Papra-ingestion" = {
         device = "/data/ell/Papra/ingestion";
         fsType = "none";
         options = [ "bind" ];
