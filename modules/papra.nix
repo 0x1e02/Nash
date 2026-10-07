@@ -15,7 +15,7 @@
       DATABASE_URL = "file:/data/ell/Papra/db.sqlite";
       INGESTION_FOLDER_IS_ENABLED = true;
       INGESTION_FOLDER_ROOT_PATH = "/data/ell/Papra/ingestion";
-      INGESTION_FOLDER_POST_PROCESSING_MOVE_FOLDER_PATH= "./ingestion-done";
+      INGESTION_FOLDER_POST_PROCESSING_MOVE_FOLDER_PATH= "ingestion-done";
     };
   };
 
