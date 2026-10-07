@@ -13,4 +13,8 @@
       # DATABASE_URL = "file:/data/ell/Papra/db.sqlite";
     };
   };
+
+  networking.firewall = {
+      allowedTCPPorts = [ 1221 ];
+  };
 }
