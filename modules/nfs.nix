@@ -5,7 +5,7 @@
         exports = ''
         /srv/share                    *(rw,insecure,fsid=0,no_subtree_check)
         /srv/share/ruth               192.168.0.0/24(rw,sync,nohide,insecure,no_subtree_check,all_squash)
-        /srv/share/ell                *(rw,sync,nohide,insecure,no_subtree_check,all_squash)
+        /srv/share/ell                *(rw,sync,nohide,insecure,no_subtree_check,all_squash,crossmnt)
         '';
     };
 
