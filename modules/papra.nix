@@ -14,7 +14,7 @@
       DOCUMENT_STORAGE_FILESYSTEM_ROOT= "/data/ell/Papra/documents";
       DATABASE_URL = "file:/data/ell/Papra/db.sqlite";
       INGESTION_FOLDER_IS_ENABLED = true;
-      # INGESTION_FOLDER_ROOT_PATH = "/data/ell/Papra/ingestion";
+      INGESTION_FOLDER_ROOT_PATH = "/data/ell/Papra/ingestion";
     };
   };
 
