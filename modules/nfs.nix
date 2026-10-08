@@ -38,8 +38,8 @@
         options = [ "bind" ];
     };
 
-    fileSystems."/srv/share/ell/Backups" = {
-        device = "/data/ell/Backups";
+    fileSystems."/srv/share/ell/Snapshots" = {
+        device = "/data/ell/.snapshots";
         fsType = "none";
         options = [ "bind" ];
     };
