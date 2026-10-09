@@ -10,7 +10,7 @@
     # environment.AUTH_IS_REGISTRATION_ENABLED = "false";  # set after you've created your account
     environment = {
       APP_BASE_URL = "http://nash:1221";
-      DOCUMENTS_OCR_LANGUAGES = "eng,deu";
+      DOCUMENTS_OCR_LANGUAGES = "deu,eng";
       DOCUMENT_STORAGE_FILESYSTEM_ROOT= "/data/ell/Papra/documents";
       DATABASE_URL = "file:/data/ell/Papra/db.sqlite";
       INGESTION_FOLDER_IS_ENABLED = true;
