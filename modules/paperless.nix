@@ -20,7 +20,7 @@
     "d /data/ell/paperless 0755 paperless paperless -"
   ];
 
-  fileSystems."/var/log/paperless" = {
+  fileSystems."/var/lib/paperless" = {
       device = "/data/ell/paperless";
       fsType = "none";
       options = [ "bind" ];
