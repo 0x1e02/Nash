@@ -16,6 +16,10 @@
       allowedTCPPorts = [ 28981 ];
   };
 
+  systemd.tmpfiles.rules = [
+    "d /var/lib/paperless 0755 paperless paperless -"
+  ];
+
   # systemd.tmpfiles.rules = [
   #   "d /data/ell/paperless 0755 paperless paperless -"
   # ];

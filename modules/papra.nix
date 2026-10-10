@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 {
   services.papra = {
-    enable = true;
+    enable = false;
     user = "ell";
     group = "users";
     # baseUrl = "http://nash:1221";   # must match the URL you type in the browser
