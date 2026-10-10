@@ -25,7 +25,7 @@
         volume."/data/services" = {
           subvolume = ".";
           snapshot_dir = ".snapshots";
-        }
+        };
       };
     };
   };
