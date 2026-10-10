@@ -7,6 +7,7 @@
     passwordFile = "/etc/paperless-admin-pass";
     settings = {
       PAPERLESS_OCR_LANGUAGE = "deu+eng";
+      PAPERLESS_TASK_WORKERS = 6;
     };
   };
   networking.firewall = {
