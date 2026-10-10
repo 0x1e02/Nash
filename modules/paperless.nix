@@ -4,7 +4,7 @@
     enable = true;
     configureTika = true;
     address = "0.0.0.0";
-    dataDir = "/data/ell/paperless";
+    # dataDir = "/data/ell/paperless";
     settings = {
       PAPERLESS_OCR_LANGUAGE = "deu+eng";
       PAPERLESS_TASK_WORKERS = 6;
@@ -14,5 +14,15 @@
 
   networking.firewall = {
       allowedTCPPorts = [ 28981 ];
+  };
+
+  systemd.tmpfiles.rules = [
+    "d /data/ell/paperless 0755 paperless paperless -"
+  ];
+
+  fileSystems."/var/log/paperless" = {
+      device = "/data/ell/paperless";
+      fsType = "none";
+      options = [ "bind" ];
   };
 }
