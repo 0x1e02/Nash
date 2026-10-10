@@ -16,13 +16,13 @@
       allowedTCPPorts = [ 28981 ];
   };
 
-  systemd.tmpfiles.rules = [
-    "d /data/ell/paperless 0755 paperless paperless -"
-  ];
+  # systemd.tmpfiles.rules = [
+  #   "d /data/ell/paperless 0755 paperless paperless -"
+  # ];
 
-  fileSystems."/var/lib/paperless" = {
-      device = "/data/ell/paperless";
-      fsType = "none";
-      options = [ "bind" ];
-  };
+  # fileSystems."/var/lib/paperless" = {
+  #     device = "/data/ell/paperless";
+  #     fsType = "none";
+  #     options = [ "bind" ];
+  # };
 }
