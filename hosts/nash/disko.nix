@@ -128,6 +128,7 @@ in
   };
 
   fileSystems."/persist".neededForBoot = true;
+  fileSystems."/data/services".neededForBoot = true;
 
   systemd.tmpfiles.rules = map (
     name: "d /data/${name}/Backups 0700 ${name} users -"
