@@ -118,6 +118,8 @@ in
                       "noatime"
                     ];
                   };
+
+                  "/services/.snapshots" = { };
                 };
               };
             };
