@@ -111,7 +111,13 @@ in
               content = {
                 type = "btrfs";
                 subvolumes = userSubvolumes // {
-                  "/services" = {};
+                  "/services" = {
+                    mountpoint = "/data/services";
+                    mountOptions = [
+                      "compress=zstd"
+                      "noatime"
+                    ];
+                  };
                 };
               };
             };
