@@ -5,4 +5,7 @@
     enable = true;
     passwordFile = "/etc/paperless-admin-pass";
   };
+  networking.firewall = {
+      allowedTCPPorts = [ 28981 ];
+  };
 }
