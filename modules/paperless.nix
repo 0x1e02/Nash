@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 {
   services.paperless = {
-    enable = false;
+    enable = true;
     configureTika = true;
     address = "0.0.0.0";
     # dataDir = "/data/ell/paperless";
