@@ -19,6 +19,7 @@
         ./hosts/nash/btrbk.nix
         ./modules/nfs.nix
         ./modules/papra.nix
+        ./modules/paperless.nix
       ];
     };
   };
