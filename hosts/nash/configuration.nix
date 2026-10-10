@@ -79,5 +79,11 @@ in
     ];
   };
 
+  environment.persistence."/data/services" = {
+    directories = [
+      "/var/lib/paperless"
+    ];
+  };
+
   system.stateVersion = "26.05"; # keep this pinned to the release you installed with
 }
