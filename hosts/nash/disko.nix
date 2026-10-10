@@ -110,7 +110,9 @@ in
 
               content = {
                 type = "btrfs";
-                subvolumes = userSubvolumes;
+                subvolumes = userSubvolumes // {
+                  "/services" = {};
+                };
               };
             };
           };
