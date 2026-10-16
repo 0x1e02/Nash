@@ -2,7 +2,7 @@
 {
   services.caddy = {
     enable = true;
-    virtualHosts."localhost".extraConfig = ''
+    virtualHosts."nash".extraConfig = ''
       tls internal
       respond "Hello, world!"
     '';
