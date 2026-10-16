@@ -7,4 +7,6 @@
       respond "Hello, world!"
     '';
   };
+
+  networking.firewall.allowedTCPPorts = [ 80 443 ];
 }
