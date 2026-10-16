@@ -16,7 +16,13 @@ in
   networking.firewall.allowedTCPPorts = [ 80 443 22 ];
   networking.networkmanager.enable = true;
   
-  services.tailscale.enable = true;
+  services.tailscale = {
+    enable = true;
+    serve.services."paperless".endpoints = {
+        "tcp:443" = "https://localhost:443";
+        "tcp:80" = "http://localhost:80";
+    };
+  };
 
   users.groups."storage" = {};
   users.users = {
