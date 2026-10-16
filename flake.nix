@@ -20,6 +20,7 @@
         ./modules/nfs.nix
         ./modules/papra.nix
         ./modules/paperless.nix
+        ./modules/caddy.nix
       ];
     };
   };
