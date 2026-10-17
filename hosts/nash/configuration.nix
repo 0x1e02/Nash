@@ -15,6 +15,11 @@ in
 
   networking.firewall.allowedTCPPorts = [ 80 443 22 ];
   networking.networkmanager.enable = true;
+
+  networking.hosts."127.0.0.1" = [
+    "paperless.internal"
+    "gitea.internal"
+  ];
   
   services.tailscale.enable = true;
   services.gitea = {
