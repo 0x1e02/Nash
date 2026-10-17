@@ -21,6 +21,7 @@
         ./modules/papra.nix
         ./modules/paperless.nix
         ./modules/caddy.nix
+        ./modules/nsd.nix
       ];
     };
   };
