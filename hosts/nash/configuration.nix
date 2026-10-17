@@ -69,6 +69,7 @@ in
 
   environment.persistence."/persist" = {
     directories = [
+      { directory = "/root/.ssh"; user = "root"; group = "root"; mode = "0700"; }
       "/etc/nixos"
       "/var/log"
       "/var/lib"
