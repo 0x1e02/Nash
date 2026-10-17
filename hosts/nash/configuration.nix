@@ -67,6 +67,10 @@ in
     disko
   ];
 
+  nvironment.sessionVariables = {
+    NASH_UPSTREAM = "git+ssh://git@gitea.internal/0x1e02/Nash.git#nash";
+  };
+
   environment.persistence."/persist" = {
     directories = [
       { directory = "/root/.ssh"; user = "root"; group = "root"; mode = "0700"; }
