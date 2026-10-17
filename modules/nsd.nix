@@ -4,7 +4,7 @@
     enable = true;
     interfaces = [ "0.0.0.0" "::" ];
 
-    services.nsd.zones."internal".data = ''
+    zones."internal".data = ''
       $ORIGIN internal.
       $TTL 300
 
@@ -21,7 +21,7 @@
       *    IN CNAME nash.gila-pythagorean.ts.net.   ; MagicDNS name, trailing dot required
     '';
   };
-  
+
   networking.firewall.allowedUDPPorts = [ 53 ];
   networking.firewall.allowedTCPPorts = [ 53 ];
 }
