@@ -19,7 +19,10 @@ in
   services.tailscale.enable = true;
   services.gitea = {
     enable = true;
-    settings.server.HTTP_PORT = 3333;
+    settings.server = {
+      HTTP_PORT = 3333;
+      DOMAIN = "https://gitea.internal"
+    };
   };
 
   users.groups."storage" = {};
