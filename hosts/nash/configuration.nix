@@ -21,7 +21,7 @@ in
     enable = true;
     settings.server = {
       HTTP_PORT = 3333;
-      DOMAIN = "https://gitea.internal";
+      DOMAIN = "https://gitea.internal:443";
     };
   };
 
