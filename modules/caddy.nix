@@ -12,6 +12,10 @@
       tls internal
       reverse_proxy http://localhost:28981
     '';
+    virtualHosts."gitea.internal".extraConfig = ''
+      tls internal
+      reverse_proxy http://localhost:3000
+    '';
 
     # virtualHosts."paperless.gila-pythagorean.ts.net".extraConfig = ''
     #   tls internal
