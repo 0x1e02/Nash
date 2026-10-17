@@ -5,7 +5,7 @@
 
     virtualHosts."paperless.internal".extraConfig = ''
       tls internal
-      respond "Hello, world!"
+      reverse_proxy http://localhost:28981
     '';
 
     # virtualHosts."paperless.gila-pythagorean.ts.net".extraConfig = ''
