@@ -10,6 +10,8 @@
       PAPERLESS_TASK_WORKERS = 6;
       PAPERLESS_IGNORE_DATES = "2002-08-21";
     };
+
+    domain = "paperless.internal";
   };
 
   networking.firewall = {
