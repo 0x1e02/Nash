@@ -3,6 +3,11 @@
   services.caddy = {
     enable = true;
 
+      virtualHosts."*.internal".extraConfig = ''
+        tls internal
+        respond "Not found" 404
+      '';
+
     virtualHosts."paperless.internal".extraConfig = ''
       tls internal
       reverse_proxy http://localhost:28981
