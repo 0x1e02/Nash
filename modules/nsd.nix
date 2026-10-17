@@ -20,7 +20,8 @@
 
       *    IN CNAME nash.gila-pythagorean.ts.net.   ; MagicDNS name, trailing dot required
     '';
-
+  };
+  
   networking.firewall.allowedUDPPorts = [ 53 ];
   networking.firewall.allowedTCPPorts = [ 53 ];
 }
