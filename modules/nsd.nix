@@ -2,6 +2,7 @@
 {
   services.nsd = {
     enable = true;
+    interfaces = [ "0.0.0.0" "::" ];
 
     zones."example.net".data = ''
       $ORIGIN example.net.
