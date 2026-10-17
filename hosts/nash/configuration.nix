@@ -16,6 +16,7 @@ in
   networking.firewall.allowedTCPPorts = [ 80 443 22 ];
   networking.networkmanager.enable = true;
   
+  services.resolved.enable = true;
   services.tailscale.enable = true;
 
   users.groups."storage" = {};
