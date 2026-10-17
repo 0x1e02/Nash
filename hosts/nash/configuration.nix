@@ -17,7 +17,10 @@ in
   networking.networkmanager.enable = true;
   
   services.tailscale.enable = true;
-  services.gitea.enable = true;
+  services.gitea = {
+    enable = true;
+    port = 3333;
+  };
 
   users.groups."storage" = {};
   users.users = {

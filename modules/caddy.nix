@@ -14,7 +14,7 @@
     '';
     virtualHosts."gitea.internal".extraConfig = ''
       tls internal
-      reverse_proxy http://localhost:3000
+      reverse_proxy http://localhost:3333
     '';
 
     # virtualHosts."paperless.gila-pythagorean.ts.net".extraConfig = ''
