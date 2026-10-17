@@ -89,6 +89,7 @@ in
   environment.persistence."/data/services" = {
     directories = [
       "/var/lib/paperless"
+      "/var/lib/gitea"
     ];
   };
 
